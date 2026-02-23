@@ -43,3 +43,11 @@ These notes are based on hands-on practice and real-world DevOps concepts.
 ---
 
 This repository reflects my commitment to becoming a DevOps Engineer by focusing on strong foundations and continuous improvement.
+
+---
+
+## Continuous Improvement
+
+This repository will be updated regularly as I learn new tools, concepts, and best practices.
+
+DevOps is a continuous learning journey, and these notes will evolve with my understanding and hands-on experience.
