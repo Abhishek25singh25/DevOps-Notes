@@ -10,35 +10,38 @@ These notes are based on hands-on practice and real-world DevOps concepts.
 
 ## Learning Roadmap
 
-1. Introduction to DevOps  
-2. Linux Basics  
-3. Linux Advanced  
-4. Networking Fundamentals  
-5. Git Fundamentals  
-6. Git Advanced  
-7. Shell Scripting Basics  
-8. Shell Scripting Advanced  
-9. Docker Basics  
-10. Docker Advanced  
+1. Introduction to DevOps
+2. Linux Basics
+3. Linux Advanced
+4. Networking Fundamentals
+5. Git Fundamentals
+6. Git Advanced
+7. Shell Scripting Basics
+8. Shell Scripting Advanced
+9. Docker Basics
+10. Docker Advanced
+11. YAML Fundamentals
+12. GitHub Actions & CI/CD
 
 ---
 
 ## Why This Repository Exists
 
-- To maintain structured documentation of my DevOps journey  
-- To build strong fundamentals  
-- To serve as a quick revision reference  
-- To demonstrate practical and consistent learning  
+* To maintain structured documentation of my DevOps journey
+* To build strong fundamentals
+* To serve as a quick revision reference
+* To demonstrate practical and consistent learning
 
 ---
 
 ## Core Areas Covered
 
-- System Administration (Linux)
-- Networking Fundamentals
-- Version Control (Git)
-- Automation (Shell Scripting)
-- Containerization (Docker)
+* System Administration (Linux)
+* Networking Fundamentals
+* Version Control (Git)
+* Automation (Shell Scripting)
+* Containerization (Docker)
+* CI/CD (GitHub Actions)
 
 ---
 
