@@ -1,4 +1,4 @@
-# Kubernetes – Fundamentals (Theory Notes)
+# Kubernetes – Fundamentals 
 
 ---
 
