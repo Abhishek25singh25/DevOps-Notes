@@ -1,202 +1,232 @@
-# Terraform – Advanced  
+# Ansible – Fundamentals
 
 ---
 
-# 1. What is Advanced Terraform  
+## 1. What is Ansible
 
-Advanced Terraform focuses on building **production-ready infrastructure** with scalability, security, and automation.  
+Ansible is a configuration management and automation tool.
 
-It helps in managing large and complex systems efficiently.  
+It is used to automate:
 
----
+* Server configuration
+* Application deployment
+* Infrastructure management
 
-# 2. Custom Modules  
-
-Custom modules are reusable blocks of code.  
-
-* Reduce code duplication  
-* Improve maintainability  
-* Make infrastructure modular  
+Ansible is **agentless**, meaning no software is required on target machines.
 
 ---
 
-# 3. Registry Modules  
+## 2. Why Use Ansible
 
-Terraform Registry provides pre-built modules.  
-
-* Ready-to-use configurations  
-* Saves development time  
-* Follows best practices  
-
----
-
-# 4. Remote Backend  
-
-Remote backend stores Terraform state remotely.  
-
-* Enables team collaboration  
-* Prevents data loss  
-* Example: AWS S3  
+* Simple and easy to learn
+* Agentless architecture
+* Uses SSH for communication
+* Reduces manual work
+* Ensures consistency
 
 ---
 
-# 5. State Locking  
+## 3. Ansible Architecture
 
-State locking prevents multiple users from applying changes at the same time.  
+Ansible works in a **control node → managed nodes** model.
 
-* Avoids conflicts  
-* Maintains consistency  
-
----
-
-# 6. Workspaces  
-
-Workspaces allow multiple environments using same code.  
-
-* dev  
-* staging  
-* prod  
-
-Each workspace has its own state.  
+* Control Node → where Ansible is installed
+* Managed Nodes → target machines
+* Inventory → list of servers
 
 ---
 
-# 7. Multi-Environment Setup  
+## 4. Inventory
 
-Used to manage different environments.  
+Inventory is a file that contains details of target systems.
 
-* Use tfvars files  
-* Keep environments isolated  
-* Avoid configuration conflicts  
+* Can be static or dynamic
+* Organized using groups
 
----
+Example:
 
-# 8. Dynamic Blocks  
-
-Dynamic blocks are used for repeated configurations.  
-
-* Reduce repetition  
-* Useful in loops  
+* web servers
+* database servers
 
 ---
 
-# 9. Provisioners  
+## 5. Modules
 
-Provisioners run scripts on resources.  
+Modules are small programs that perform tasks.
 
-* Used for setup tasks  
-* Example: install packages  
+* File operations
+* Package installation
+* Service management
 
----
+Examples:
 
-# 10. Lifecycle Rules  
-
-Lifecycle rules control resource behavior.  
-
-* prevent_destroy → avoid accidental deletion  
-* create_before_destroy → zero downtime  
-
----
-
-# 11. Data Sources  
-
-Data sources fetch existing infrastructure details.  
-
-* Example: existing VPC or AMI  
+* apt
+* yum
+* copy
+* service
 
 ---
 
-# 12. Locals  
+## 6. Ad-hoc Commands
 
-Locals store temporary values.  
+Ad-hoc commands are one-line commands used for quick tasks.
 
-* Improve readability  
-* Avoid repeated code  
+* Useful for testing
+* No need to write playbooks
 
----
+Example tasks:
 
-# 13. Terraform Functions  
-
-Functions help in data manipulation.  
-
-* String functions  
-* Numeric functions  
-* Collection functions  
+* Ping servers
+* Install packages
 
 ---
 
-# 14. Input Validation  
+## 7. Playbooks
 
-Validation ensures correct variable values.  
+Playbooks are YAML files used to define automation tasks.
 
-* Prevents wrong inputs  
-* Improves reliability  
-
----
-
-# 15. Dependency Management  
-
-Terraform handles dependencies automatically.  
-
-* Ensures correct execution order  
+* Written in YAML format
+* Easy to read and write
+* Execute multiple tasks
 
 ---
 
-# 16. Import Existing Resources  
+## 8. YAML Basics
 
-Terraform can manage already created resources.  
+YAML is a human-readable data format.
 
-* Useful for existing infrastructure  
-
----
-
-# 17. State Management  
-
-Proper state management is important.  
-
-* Use remote backend  
-* Enable versioning  
-* Backup state  
+* Uses indentation
+* Key-value pairs
+* No brackets like JSON
 
 ---
 
-# 18. Security Best Practices  
+## 9. Tasks
 
-* Do not store secrets in code  
-* Use environment variables  
-* Encrypt state files  
+Tasks define actions in a playbook.
 
----
-
-# 19. File Structure  
-
-Maintain proper project structure.  
-
-* Separate files (main, variables, outputs)  
-* Use modules  
-* Keep code clean  
+* Each task runs a module
+* Executed in sequence
 
 ---
 
-# 20. CI/CD Integration  
+## 10. Handlers
 
-Terraform can be integrated with pipelines.  
+Handlers are special tasks triggered by changes.
 
-* Automates deployment  
-* Improves workflow  
-
----
-
-# Key Points to Remember  
-
-* Modules improve reusability  
-* Workspaces manage environments  
-* State is very important  
-* Remote backend is recommended  
-* Security should be a priority  
+* Run only when notified
+* Used for restarting services
 
 ---
 
-# Conclusion  
+## 11. Variables
 
-Advanced Terraform helps in building scalable, secure, and production-ready infrastructure with automation and best practices.  
+Variables store values for reuse.
+
+* Improve flexibility
+* Avoid hardcoding
+
+---
+
+## 12. Facts
+
+Facts are system information gathered by Ansible.
+
+* IP address
+* OS details
+* Memory
+
+---
+
+## 13. Conditionals
+
+Conditionals control execution using conditions.
+
+* Based on variables or facts
+
+---
+
+## 14. Loops
+
+Loops are used to repeat tasks.
+
+* Avoid repetition
+* Work with lists
+
+---
+
+## 15. Roles
+
+Roles organize playbooks into a structured format.
+
+* Improve reusability
+* Keep code clean
+
+Structure includes:
+
+* tasks
+* handlers
+* variables
+* templates
+
+---
+
+## 16. Templates
+
+Templates use Jinja2 for dynamic configuration.
+
+* Create dynamic files
+* Replace variables
+
+---
+
+## 17. Tags
+
+Tags allow selective execution of tasks.
+
+* Run specific parts of playbook
+* Useful for debugging
+
+---
+
+## 18. Ansible Vault
+
+Ansible Vault is used to encrypt sensitive data.
+
+* Protect passwords and secrets
+
+---
+
+## 19. Error Handling
+
+Ansible provides error handling mechanisms.
+
+* ignore_errors
+* retries
+
+---
+
+## 20. Idempotency
+
+Ansible ensures idempotency.
+
+* Same result even after multiple runs
+* No duplicate changes
+
+---
+
+## Key Points to Remember
+
+* Ansible is agentless
+* Uses SSH for communication
+* Playbooks are written in YAML
+* Modules perform tasks
+* Roles improve structure
+
+---
+
+## Conclusion
+
+Ansible simplifies automation by making infrastructure management easy, consistent, and scalable.
+
+---
