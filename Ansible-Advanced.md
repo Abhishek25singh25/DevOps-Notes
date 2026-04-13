@@ -1,202 +1,209 @@
-# Terraform – Advanced  
+# Ansible – Advanced
 
 ---
 
-# 1. What is Advanced Terraform  
+## 1. What is Advanced Ansible
 
-Advanced Terraform focuses on building **production-ready infrastructure** with scalability, security, and automation.  
+Advanced Ansible focuses on building **scalable, reusable, and production-ready automation**.
 
-It helps in managing large and complex systems efficiently.  
-
----
-
-# 2. Custom Modules  
-
-Custom modules are reusable blocks of code.  
-
-* Reduce code duplication  
-* Improve maintainability  
-* Make infrastructure modular  
+It helps manage complex infrastructures efficiently with better structure and control.
 
 ---
 
-# 3. Registry Modules  
+## 2. Roles (Advanced Usage)
 
-Terraform Registry provides pre-built modules.  
+Roles organize automation into reusable components.
 
-* Ready-to-use configurations  
-* Saves development time  
-* Follows best practices  
-
----
-
-# 4. Remote Backend  
-
-Remote backend stores Terraform state remotely.  
-
-* Enables team collaboration  
-* Prevents data loss  
-* Example: AWS S3  
+* Improve maintainability
+* Follow standard directory structure
+* Enable code reuse across projects
 
 ---
 
-# 5. State Locking  
+## 3. Dynamic Inventory
 
-State locking prevents multiple users from applying changes at the same time.  
+Dynamic inventory fetches real-time server details.
 
-* Avoids conflicts  
-* Maintains consistency  
-
----
-
-# 6. Workspaces  
-
-Workspaces allow multiple environments using same code.  
-
-* dev  
-* staging  
-* prod  
-
-Each workspace has its own state.  
+* Useful for cloud environments
+* Automatically updates inventory
+* Example: AWS, Azure
 
 ---
 
-# 7. Multi-Environment Setup  
+## 4. Ansible Galaxy
 
-Used to manage different environments.  
+Ansible Galaxy is a repository for sharing roles.
 
-* Use tfvars files  
-* Keep environments isolated  
-* Avoid configuration conflicts  
-
----
-
-# 8. Dynamic Blocks  
-
-Dynamic blocks are used for repeated configurations.  
-
-* Reduce repetition  
-* Useful in loops  
+* Download pre-built roles
+* Save development time
+* Follow best practices
 
 ---
 
-# 9. Provisioners  
+## 5. Advanced Playbook Features
 
-Provisioners run scripts on resources.  
+Playbooks can include advanced features.
 
-* Used for setup tasks  
-* Example: install packages  
-
----
-
-# 10. Lifecycle Rules  
-
-Lifecycle rules control resource behavior.  
-
-* prevent_destroy → avoid accidental deletion  
-* create_before_destroy → zero downtime  
+* include_tasks
+* import_playbook
+* roles usage
 
 ---
 
-# 11. Data Sources  
+## 6. Blocks
 
-Data sources fetch existing infrastructure details.  
+Blocks group multiple tasks together.
 
-* Example: existing VPC or AMI  
-
----
-
-# 12. Locals  
-
-Locals store temporary values.  
-
-* Improve readability  
-* Avoid repeated code  
+* Apply common settings
+* Useful for error handling
 
 ---
 
-# 13. Terraform Functions  
+## 7. Error Handling (Advanced)
 
-Functions help in data manipulation.  
+Advanced error handling improves reliability.
 
-* String functions  
-* Numeric functions  
-* Collection functions  
-
----
-
-# 14. Input Validation  
-
-Validation ensures correct variable values.  
-
-* Prevents wrong inputs  
-* Improves reliability  
+* block
+* rescue
+* always
 
 ---
 
-# 15. Dependency Management  
+## 8. Conditionals & When
 
-Terraform handles dependencies automatically.  
+Conditionals control task execution.
 
-* Ensures correct execution order  
-
----
-
-# 16. Import Existing Resources  
-
-Terraform can manage already created resources.  
-
-* Useful for existing infrastructure  
+* Use `when` statements
+* Based on variables or facts
 
 ---
 
-# 17. State Management  
+## 9. Loops (Advanced)
 
-Proper state management is important.  
+Advanced loops handle complex data.
 
-* Use remote backend  
-* Enable versioning  
-* Backup state  
-
----
-
-# 18. Security Best Practices  
-
-* Do not store secrets in code  
-* Use environment variables  
-* Encrypt state files  
+* loop with dictionaries
+* loop_control
+* nested loops
 
 ---
 
-# 19. File Structure  
+## 10. Tags (Advanced Usage)
 
-Maintain proper project structure.  
+Tags allow selective execution.
 
-* Separate files (main, variables, outputs)  
-* Use modules  
-* Keep code clean  
-
----
-
-# 20. CI/CD Integration  
-
-Terraform can be integrated with pipelines.  
-
-* Automates deployment  
-* Improves workflow  
+* Run specific tasks
+* Skip unnecessary tasks
+* Useful in large playbooks
 
 ---
 
-# Key Points to Remember  
+## 11. Jinja2 Templates (Advanced)
 
-* Modules improve reusability  
-* Workspaces manage environments  
-* State is very important  
-* Remote backend is recommended  
-* Security should be a priority  
+Templates enable dynamic configurations.
+
+* Use conditions and loops
+* Generate dynamic files
 
 ---
 
-# Conclusion  
+## 12. Variables (Advanced)
 
-Advanced Terraform helps in building scalable, secure, and production-ready infrastructure with automation and best practices.  
+Advanced variable management improves flexibility.
+
+* Variable precedence
+* Group variables
+* Host variables
+
+---
+
+## 13. Ansible Vault (Advanced)
+
+Vault secures sensitive data.
+
+* Encrypt files
+* Encrypt variables
+* Manage secrets securely
+
+---
+
+## 14. Delegation
+
+Delegation allows tasks to run on different hosts.
+
+* Use `delegate_to`
+* Useful for centralized tasks
+
+---
+
+## 15. Async Tasks
+
+Async tasks run in the background.
+
+* Improve performance
+* Handle long-running tasks
+
+---
+
+## 16. Parallelism & Forks
+
+Ansible executes tasks in parallel.
+
+* Controlled by forks
+* Improves execution speed
+
+---
+
+## 17. Handlers (Advanced)
+
+Handlers can be optimized.
+
+* Triggered only on change
+* Avoid unnecessary restarts
+
+---
+
+## 18. Strategy Plugins
+
+Strategy controls execution behavior.
+
+* linear (default)
+* free (parallel execution)
+
+---
+
+## 19. Performance Optimization
+
+Optimize Ansible for better performance.
+
+* Reduce unnecessary tasks
+* Use caching
+* Optimize inventory
+
+---
+
+## 20. CI/CD Integration
+
+Ansible can be integrated with CI/CD pipelines.
+
+* Automate deployments
+* Improve workflow
+* Ensure consistency
+
+---
+
+## Key Points to Remember
+
+* Roles are core for scalability
+* Dynamic inventory is important for cloud
+* Vault ensures security
+* Tags help selective execution
+* Performance optimization is critical
+
+---
+
+## Conclusion
+
+Advanced Ansible enables efficient, scalable, and secure automation for managing complex infrastructures in production environments.
+
+---
